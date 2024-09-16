@@ -1,5 +1,7 @@
 package fundamentals;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -30,5 +32,41 @@ public class Main {
 
         boolean hasHighIncome = (income > 100_000);
 
+        // For Loop
+        for (int i = 5; i > 0; i--)
+            System.out.println("Hello World " + i);
+
+
+        // While Loop
+        Scanner scanner = new Scanner(System.in);
+        String input = "";
+
+        while (!input.equals("quit")) {
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+
+            if (input.equals("pass"))
+                continue;
+            if (input.equals("quit"))
+                break;
+
+            System.out.println(input);
+        }
+
+        // Do While Loop - Ensures the code block runs at least once
+        do {
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        } while (!input.equals("quit"));
+
+        // For each loop
+        String[] fruits = { "Apple", "Mango", "Orange" };
+
+        for (int i = 0; i < fruits.length; i++)
+            System.out.println(fruits[i]);
+
+        for (String fruit : fruits)
+            System.out.println(fruit);
     }
 }
