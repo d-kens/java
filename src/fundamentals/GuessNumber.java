@@ -7,7 +7,8 @@ public class GuessNumber {
         int luckyNumber = (int)(Math.random() * 101);
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Guess a magic number between 0 and 100");
+        System.out.println("Guess a number between 0 and 100");
+
 
         int guess = -1;
         while(guess != luckyNumber) {
@@ -15,13 +16,14 @@ public class GuessNumber {
             guess = input.nextInt();
 
             if(guess == luckyNumber) {
-                System.out.println("You are right, the lucky number is: " + luckyNumber);
+                System.out.println("Yes, the lucky number is: " + luckyNumber);
             } else if (guess > luckyNumber) {
-                System.out.println("Guess is too high, Try again ");
+                System.out.println("Your guess is to high");
             } else {
-                System.out.println("Guess is too low, Try again ");
+                System.out.println("Your guess is too low.");
             }
-
         }
+
+
     }
 }
