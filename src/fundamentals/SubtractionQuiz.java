@@ -4,29 +4,47 @@ import java.util.Scanner;
 
 public class SubtractionQuiz {
     public static void main(String [] args) {
-        // Generate two random single digit integers
-        int number1 = (int)(Math.random() * 10);
-        int number2 = (int)(Math.random() * 10);
+        int count = 0;
+        int correctCount = 0;
+        long startTime = System.currentTimeMillis();
+        String output = " ";
 
-        // if number1 < number2, swap number1 with number2
-        if (number1 < number2) {
-            int temp = number1;
-            number1 = number2;
-            number2 = temp;
-        }
-
-        // Prompt the student for an answer
-        System.out.print("What is " + number1 + " - " + number2 +": ");
         Scanner input = new Scanner(System.in);
-        int answer = input.nextInt();
 
-        // Grade the answer and display the result
-        if (number1 - number2 == answer)
-            System.out.println("You are correct");
-        else {
-            System.out.println("You are wrong");
-            System.out.println(number1 + " - " + number2 + " should be " + (number1 - number2));
+        while(count < 5) {
+
+            int number1 = (int)(Math.random() * 10);
+            int number2 = (int)(Math.random() * 10);
+
+
+            if (number1 < number2) {
+                int temp = number1;
+                number1 = number2;
+                number2 = temp;
+            }
+
+
+            System.out.print("What is " + number1 + " - " + number2 +": ");
+            int answer = input.nextInt();
+
+            if (number1 - number2 == answer) {
+                System.out.println("You are correct");
+                correctCount++;
+            }
+            else {
+                System.out.println("You are wrong");
+                System.out.println(number1 + " - " + number2 + " should be " + (number1 - number2));
+            }
+            count++;
+
+            output += "\n" + number1 + "–" + number2 + "=" + answer + ((number1 - number2 == answer) ? " correct": " wrong");
         }
+
+        long endTime = System.currentTimeMillis();
+        long testTime = endTime - startTime;
+
+        System.out.println("Correct count is " + correctCount +
+                "\nTest time is " + testTime / 1000 + " seconds\n" + output);
 
     }
 }
