@@ -27,4 +27,9 @@ public class ProcessingArrays {
 
         for (int number : numbers) System.out.print(number + " ");
     }
+
+
+    public static int[] shift(int[] numbers) {
+        return new int[numbers.length];
+    }
 }
