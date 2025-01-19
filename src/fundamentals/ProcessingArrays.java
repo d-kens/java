@@ -1,3 +1,5 @@
+package fundamentals;
+
 public class ProcessingArrays {
     public static void main(String[] args) {
         int[] numbers = {1, 10, 41, 91, 39, 23, 91, 84, 29};
@@ -11,6 +13,7 @@ public class ProcessingArrays {
     public static int[] shift(int[] numbers) {
         int[] result = new int[numbers.length];
 
+        System.arraycopy(numbers, 0, result, 0, numbers.length);
         System.arraycopy(numbers, 0, result, 0, numbers.length);
 
         int temp = numbers[numbers.length - 1];

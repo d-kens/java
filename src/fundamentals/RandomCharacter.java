@@ -8,21 +8,23 @@ public class RandomCharacter {
 
     // Get a random character between ch1 and ch2
     public static char getRandomCharacter(char ch1, char ch2) {
-        return (char)(ch1 + Math.random() * (ch2 - ch1 + 1));
+        // Generate a random integer between ch1 and ch2 (inclusive)
+        int randomInt = ch1 + (int)(Math.random() * (ch2 - ch1 + 1));
+        return (char) randomInt;
     }
 
     // Get a random lowercase character
-    public static char gerRandomLowerCaseCharacter() {
+    public static char getRandomLowerCaseCharacter() {
         return getRandomCharacter('a', 'z');
     }
 
     // Get a random uppercase character
-    public static char gerRandomUpperCaseCharacter() {
+    public static char getRandomUpperCaseCharacter() {
         return getRandomCharacter('A', 'Z');
     }
 
     // Get a random digit character
-    public static char gerRandomDigitCharacter() {
+    public static char getRandomDigitCharacter() {
         return getRandomCharacter('0', '9');
     }
 
@@ -34,7 +36,7 @@ public class RandomCharacter {
     // Print random characters
     public static void printRandomCharacters(int totalNumberOfCharacter, int numberOfCharactersPerLine) {
         for (int i = 0; i < totalNumberOfCharacter; i++) {
-            char randomChar = gerRandomLowerCaseCharacter();
+            char randomChar = getRandomLowerCaseCharacter();
 
             if((i + 1) % numberOfCharactersPerLine == 0) {
                 System.out.println(randomChar);
