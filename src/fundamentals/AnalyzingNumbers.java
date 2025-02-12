@@ -13,6 +13,7 @@ public class AnalyzingNumbers {
         double[] values = new double[noOfItems];
         double sum = 0;
 
+
         System.out.println("Enter number");
         for(int i = 0; i < noOfItems; i++) {
            values[i] = input.nextDouble();
