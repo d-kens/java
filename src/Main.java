@@ -2,20 +2,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int x = 200;
-        int[] y = new int[]{10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        char[] characters = new char[]{
+                'r', 'e', 't', 'y', 'u', 'i', 'o', 'p', 'i', 'u', 'y', 't', 'r', 'e', 'w', 's',
+                'd', 'f', 'g', 'h', 'j', 'k', 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'm',
+                'n', 'b', 'v', 'c', 'x', 'z', 's', 'a', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o',
+                'j', 'h', 'g', 'f', 'd', 's', 'x', 'c', 'v', 'b', 'n', 'm', 'l', 'k', 'i', 'u', 'y'
+        };
 
-        update(x, y);
-
-        System.out.println("x is " + x);
-        System.out.println("y[0] is " + y[0]);
+        countCharacters(characters);
     }
 
 
-    public static void update(int number, int[] numbers) {
+    public static void countCharacters(char[] characters) {
+        boolean[] counted = new boolean[256];
 
-        number = 1000;
-        numbers[0] = number;
+        for (char current : characters) {
+
+            if (!counted[current]) {
+                int count = 0;
+
+                for (char character : characters) {
+                    if (character == current)
+                        count++;
+                }
+
+                System.out.println(current + ": " + count);
+                counted[current] = true;
+            }
+        }
     }
 
 
