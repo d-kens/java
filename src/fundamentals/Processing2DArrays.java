@@ -94,6 +94,17 @@ public class Processing2DArrays {
         }
     }
 
+    public static void printMatrix(double[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[row].length; column++) {
+                System.out.print(matrix[row][column] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
     public static void findRowWithMaxSum(int[][] matrix)  {
         int maxRowSum = 0;
         int maxRowIndex = 0;
