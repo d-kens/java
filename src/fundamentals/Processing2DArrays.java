@@ -22,6 +22,14 @@ public class Processing2DArrays {
         System.out.println();
         sumColumns(matrix);
 
+
+        System.out.println();
+        findRowWithMaxSum(matrix);
+
+        System.out.println();
+        randomShuffle(matrix);
+        printMatrix(matrix);
+
     }
 
 
@@ -86,6 +94,42 @@ public class Processing2DArrays {
         }
     }
 
+    public static void findRowWithMaxSum(int[][] matrix)  {
+        int maxRowSum = 0;
+        int maxRowIndex = 0;
 
+        for (int row = 0; row < matrix.length; row++) {
+            int currentRowSum = 0;
+
+            for (int col = 0; col < matrix[row].length; col++) {
+                currentRowSum += matrix[row][col];
+            }
+
+            if(currentRowSum > maxRowSum) {
+                System.out.println(currentRowSum);
+                maxRowSum = currentRowSum;
+                maxRowIndex = row;
+            }
+        }
+
+        System.out.println("Row " + maxRowIndex + " has the largest sum of " + maxRowSum);
+    }
+
+    public static int[][] randomShuffle(int[][] matrix) {
+
+        for(int row = 0; row < matrix.length; row++) {
+            for(int col = 0; col < matrix[row].length; col++) {
+                int randomRowIndex = (int)(Math.random() * matrix.length);
+                int randomColIndex = (int)(Math.random() * matrix[0].length);
+
+                int temp = matrix[row][col];
+                matrix[row][col] = matrix[randomRowIndex][randomColIndex];
+                matrix[randomRowIndex][randomColIndex] = temp;
+            }
+        }
+
+
+        return matrix;
+    }
 
 }
