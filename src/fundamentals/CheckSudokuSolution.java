@@ -65,7 +65,11 @@ public class CheckSudokuSolution {
                 return false;
 
 
-        // TODO:  Check whether grid[i][j] is unique in its 3x3 subgrid
+        // check whether grid[i][j] is unique in the 3 X 3 box
+        for (int row = (i / 3) * 3; row < (i / 3) * 3 + 3; row++)
+            for (int col = (j / 3) * 3; col < (j / 3) * 3 + 3; col++)
+                if(row != i && col != j && grid[i][j] == grid[row][col])
+                    return false;
 
         return true;
     }
