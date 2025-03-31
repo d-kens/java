@@ -1,6 +1,7 @@
 package oop;
 
 import java.awt.image.CropImageFilter;
+import java.util.Map;
 
 public class Circle {
 
@@ -46,6 +47,38 @@ public class Circle {
         }
     }
 
+    public static Circle[] createCirclesArray() {
+        Circle[] circles =  new Circle[5];
+
+        for (int i = 0; i < circles.length; i++) {
+            circles[i] = new Circle(Math.random() * 100);
+        }
+
+        return circles;
+    }
+
+
+    public static void printCircleArray(Circle[] circles) {
+        System.out.printf("%-30s%-15s\n", "Radius", "Area");
+
+        for (Circle circle : circles) System.out.printf("%-30f%-15f\n", circle.getRadius(), circle.getArea());
+
+
+        System.out.println("—————————————————————————————————————————-");
+
+        System.out.printf("%-30s%-15f\n", "The total area of circles is",
+                sum(circles) );
+    }
+
+    public static double sum(Circle[] circles) {
+        double sum = 0;
+
+        for (Circle circle : circles) sum += circle.getArea();
+
+        return sum;
+
+    }
+
 
     public static void main(String[] args) {
         Circle circle1 = new Circle(14);
@@ -72,5 +105,8 @@ public class Circle {
         System.out.println("n is " + n);
 
 
+        Circle[] circles = createCirclesArray();
+
+        printCircleArray(circles);
     }
 }
