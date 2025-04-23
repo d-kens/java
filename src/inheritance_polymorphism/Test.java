@@ -13,6 +13,9 @@ public class Test {
         System.out.println("The area is " + circle1.getArea());
         System.out.println("The diameter is " + circle1.getDiameter());
 
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(circle1.toString());
+
 
         Circle circle2 = new Circle(28);
         System.out.println("A circle " + circle2.toString());
@@ -29,5 +32,26 @@ public class Test {
         System.out.println("The radius is " + circle3.getRadius());
         System.out.println("The area is " + circle3.getArea());
         System.out.println("The diameter is " + circle3.getDiameter());
+
+
+        /* Polymorphism Illustration */
+        displayObject(new Circle(1, "red", false));
+        displayObject(new Rectangle(1, 1, "black", true));
+
+        GeometricObject shape;
+        shape = new Circle(1, "yellow", false);
+        shape = new Rectangle(2, 3, "blue", true);
+
+
+        // Casting Objects and instanceOf
+        Object object = new Circle();
+
+        if (object instanceof Circle)
+            System.out.println("The circle diameter is " + ((Circle)object).getDiameter() );
+    }
+
+
+    public static void displayObject(GeometricObject geometricObject) {
+        System.out.println("Created on " + geometricObject.getDateCreated() + ". Color is " + geometricObject.getColor());
     }
 }
