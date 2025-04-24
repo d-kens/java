@@ -14,6 +14,14 @@ public class Circle extends GeometricObject {
         this.radius = radius;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (object instanceof Circle)
+            return this.radius == ((Circle) object).radius;
+        else
+            return false;
+    }
+
 
     public double getRadius() {
         return radius;
