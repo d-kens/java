@@ -46,6 +46,8 @@ public class Test {
         // Casting Objects and instanceOf
         Object object = new Circle();
 
+
+
         if (object instanceof Circle)
             System.out.println("The circle diameter is " + ((Circle)object).getDiameter() );
     }
