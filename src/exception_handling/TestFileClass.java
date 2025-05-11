@@ -2,6 +2,7 @@ package exception_handling;
 
 import java.io.File;
 import java.util.Date;
+import java.util.Scanner;
 
 public class TestFileClass {
     public static void main(String[] args) {
@@ -16,5 +17,6 @@ public class TestFileClass {
         System.out.println("Is it hidden? " + file.isHidden());
         System.out.println("Absolute path is ? " + file.getAbsolutePath());
         System.out.println("Last modified on " + new Date(file.lastModified()));
+
     }
 }
