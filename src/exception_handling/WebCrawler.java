@@ -12,7 +12,7 @@
      1. Crawl Method
       - Key variables: listOfPendingURLs and listOfTraversedURLs storing URLs that need to be visited and keeps track of URLs that have already been visited.
       - How it works:
-       * Add the stating url to listOfPendingURLs
+       * Add the starting url to listOfPendingURLs
        * Loop condition: Continue crawling while listOfPendingURLs is not empty and the number of traversed urls is ≤ 100.
        * Remove the fist URL from listOfPendingURLs
        * If the URl is not in listOfTraversedURLs
@@ -25,13 +25,13 @@
      2. getSubURLs Method
      - How it works:
        * Create a URL object from the input string
-       * Open a connection to the URL and read its content using Scanner via openStream.
+       * Open a connection to the URL and read its content using Scanner via openStream method.
        * Read the web page content line by line
        * Search for URLs
-         - For each line, search for the substring "http:" starting from the current index.
+         - For each line, search for the substring "https:" starting from the current index.
          - If found, locate the end of the URL by finding the next double quote (") after http:.
          - Extract the URL using line.substring(current, endIndex).
-         - Update current to search for the next http: in the same line, starting after the end of the previous URL.
+         - Update current to search for the next https: in the same line, starting after the end of the previous URL.
          - If no closing quote is found (endIndex <= 0), set current = -1 to exit the inner loop.
        * Error Handling: If an exception occurs (e.g., invalid URL, network error), catch it, print the error message, and continue.
        * Return: Return the list of extracted URLs
@@ -40,41 +40,41 @@
 
 package exception_handling;
 
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
+
 public class WebCrawler {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
         System.out.println("Enter a URL: ");
-
-        String url = input.nextLine();
+        String url = new Scanner(System.in).nextLine();
         crawler(url);
     }
 
 
     public static void crawler(String startingUrl) {
-        ArrayList<String> listOfPendingUrls = new ArrayList<>();
-        ArrayList<String> listOfTraversedUrls = new ArrayList<>();
+        ArrayList<String> listOfPendingURLs = new ArrayList<>();
+        ArrayList<String> listOfTraversedURLs = new ArrayList<>();
 
-        listOfPendingUrls.add(startingUrl);
+        listOfPendingURLs.add(startingUrl);
 
-        while(!listOfPendingUrls.isEmpty() && listOfTraversedUrls.size() <= 100) {
-            String urlString = listOfPendingUrls.remove(0);
+        while(!listOfPendingURLs.isEmpty() && listOfTraversedURLs.size() <= 100) {
+            String urlString = listOfPendingURLs.remove(0);
 
-            if(!listOfTraversedUrls.contains(urlString)) {
-                listOfTraversedUrls.add(urlString);
+            if(!listOfTraversedURLs.contains(urlString)) {
+                listOfTraversedURLs.add(urlString);
+                System.out.println("Crawling " + urlString);
 
-                System.out.println("Crawl " + urlString);
-
-                for (String s: getSubURLs(urlString)) {
-                    if(!listOfTraversedUrls.contains(s))
-                        listOfPendingUrls.add(s);
+                for (String s : getSubURLs(urlString)) {
+                    if(!listOfTraversedURLs.contains(s))
+                        listOfPendingURLs.add(s);
                 }
             }
         }
+
     }
 
     // Extract all the URLs with https from the HTML content of a given web page (URL)
@@ -82,23 +82,24 @@ public class WebCrawler {
         ArrayList<String> list = new ArrayList<>();
 
         try {
+            URI uri = new URI(urlString);
+            URL url = uri.toURL();
 
-            URL url =  new URL(urlString);
             Scanner input = new Scanner(url.openStream());
-            int current = 0;
+            int currentIndex = 0;
 
             while(input.hasNext()) {
                 String line = input.nextLine();
-                current = line.indexOf("https:", current);
+                currentIndex = line.indexOf("https:", currentIndex);
 
-                if(current > 0) {
-                    int endIndex = line.indexOf("\"", current);
+                while(currentIndex > 0) {
+                    int endIndex = line.indexOf("\"", currentIndex);
 
                     if(endIndex > 0) {
-                        list.add(line.substring(current, endIndex));
-                        current = line.indexOf("https:", endIndex);
+                        list.add(line.substring(currentIndex, endIndex));
+                        currentIndex = line.indexOf("https", endIndex);
                     } else
-                        current = -1;
+                        currentIndex = -1;
                 }
             }
 
@@ -108,4 +109,7 @@ public class WebCrawler {
 
         return list;
     }
+
+
+
 }
