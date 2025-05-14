@@ -1,4 +1,4 @@
-package exception_handling;
+package exception_handling.solutions;
 
 import java.io.File;
 import java.io.PrintWriter;
