@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
- to replace a string in a file
+ To replace a string in a file
  with a new string for all files in the specified directory using the command:
  java Exercise12_22 dir oldString newString
  */
