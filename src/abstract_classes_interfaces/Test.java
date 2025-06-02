@@ -2,7 +2,7 @@ package abstract_classes_interfaces;
 
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         GeometricObject circleObject = new Circle(5);
         GeometricObject rectangleObject = new Rectangle(60, 120);
 
@@ -23,6 +23,11 @@ public class Test {
                 System.out.println(((Animal)objects[i]).sound());
 
         }
+
+
+        // Two different objects with identical contents
+        House house1 = new House(1, 1750.50);
+        House house2 = (House)house1.clone();
     }
 
 
