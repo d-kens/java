@@ -1,5 +1,0 @@
-Hello, world! This is a sample file.
-It has multiple lines and words.
-Let's count them all!
-
-This is the fourth line.
