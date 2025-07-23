@@ -4,69 +4,61 @@ import java.util.Scanner;
 
 public class WorkingWithStrings {
     public static void main(String[] args) {
-        String message = "   My name is Onyango Dickens.    ";
+        /* Simple String Methods */
+        String message = "Welcome to Java";
+
         System.out.println(message.length());
+        System.out.println("Hello".length());
 
-        System.out.println(message.charAt(16));
+        System.out.println(message.charAt(3));
 
-        System.out.println(message.concat(" I am happy to be here"));
+        System.out.println(message.concat(". It is a fun language to learn!"));
+        System.out.println(message + "! You will enjoy it.");
+        System.out.println("Chapter " + 2);
+        System.out.println("Supplement " + 'B');
+        int i = 2, j = 3;
+        System.out.println("i + j is " + i + j);
+        System.out.println("i + j is " + (i + j));
 
-        System.out.println(message + " Amor!!");
-
-        System.out.println("Welcome" + " to" + " java");
-        System.out.println("Hello number " + 2);
-        System.out.println("This is letter " + 'B');
-        int i = 1;
-        int j = 2;
-        System.out.println(" i + j is " + i + j);
-        System.out.println(" i + j is " + (i + j));
-
-        System.out.println(message.toUpperCase());
-        System.out.println(message.trim());
         System.out.println(message.toLowerCase());
+        System.out.println(message.toUpperCase());
+        System.out.println("     Wewe ni wetu".trim());
 
-
+        /* Reading a String from the Console */
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter a character:");
-        String s = input.nextLine();
-        char ch = s.charAt(0);
-        System.out.println("The character entered is " + ch);
+//        System.out.println("Describe yourself in 3 words: ");
+//        String description = input.nextLine();
+//        System.out.println(description);
+//
+//        System.out.println("Enter three words separated by spaces: ");
+//        String s1 = input.next();
+//        String s2 = input.next();
+//        String s3 = input.next();
+//        System.out.println(s1);
+//        System.out.println(s2);
+//        System.out.println(s3);
 
 
-        System.out.println("Enter a line: ");
-        String line = input.nextLine();
-        System.out.println(line);
+        /* Comparing Strings */
+        String s4 = "Welcome to Java";
+        String s5 = "Welcome to Java";
+        String s6 = "Welcome to c++";
 
+        System.out.println(s4.equals(s5));
+        System.out.println(s4.equals(s6));
 
-        System.out.println("Enter three words separate by spaces: ");
-        String s1 = input.next();
-        String s2 = input.next();
-        String s3 = input.next();
-        System.out.println("s1 is " + s1);
-        System.out.println("s2 is " + s2);
-        System.out.println("s3 is " + s3);
+        System.out.println(s4.compareTo(s5));
+        System.out.println(s4.compareTo(s6));
 
+        /* Obtaining Substring */
+        System.out.println(s4.substring(4));
+        System.out.println(s4.substring(4, 6));
 
-
-        String s10 = "ababa";
-        String s11 = "ababb";
-
-        System.out.println(s10.compareTo(s11));
-
-
-
-        // Obtaining Substrings
-        String sampleString = "Welcome to java";
-        System.out.println(sampleString.substring(1));
-        System.out.println(sampleString.substring(15,15));
-
-
-        String fullName = "Onyango  Dickens";
-        int k = fullName.indexOf(' ');
-        String firstName = fullName.substring(0, k);
-        String lastName = fullName.substring(k + 1);
-        System.out.println(firstName);
-        System.out.println(lastName);
+        /* Finding a character or a substring in a string */
+        System.out.println(s4.indexOf("a"));
+        System.out.println(s4.lastIndexOf('a'));
+        System.out.println(s4.indexOf('a', 14));
+        System.out.println(s4.lastIndexOf('a', 10));
     }
 }
