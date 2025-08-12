@@ -19,6 +19,25 @@ public class Main {
 
 
         System.out.println("He said \"Java is fun\"");
+
+
+
+        int count = 0;
+
+        while (count < 100) {
+            System.out.println("You are awesome");
+            count++;
+        }
+
+
+        int sum  = 0, i = 1;
+
+        while (i < 10) {
+            sum += i;
+            i++;
+        }
+
+        System.out.println("The sum is " + sum);
     }
 
 }
