@@ -2,42 +2,27 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int day = 4;
+        Scanner scanner = new Scanner(System.in);
 
-        switch (day) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                System.out.println("Weekday");
-                break;
-            case 0:
-            case 6:
-                System.out.println("Weekend");
-        }
+        boolean success = false;
 
+        do {
+            System.out.println("Enter Your Recent Income");
+            String input = scanner.nextLine(); // safer
 
-        System.out.println("He said \"Java is fun\"");
+            try {
+                float income = Float.parseFloat(input);
+                var tithe = income * 0.1;
+                var outputAmount = String.format("Kes. %.2f", tithe);
 
+                System.out.println(outputAmount);
 
-
-        int count = 0;
-
-        while (count < 100) {
-            System.out.println("You are awesome");
-            count++;
-        }
-
-
-        int sum  = 0, i = 1;
-
-        while (i < 10) {
-            sum += i;
-            i++;
-        }
-
-        System.out.println("The sum is " + sum);
+                success = true;
+            } catch (NumberFormatException ex) {
+                var errorMsg = String.format("System failure! Invalid input %s! Use a number", input);
+                System.err.println(errorMsg);
+            }
+        } while (!success);
     }
 
 }
