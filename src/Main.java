@@ -2,27 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        boolean success = false;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter an integer to find its smallest factor other than 1");
+        int number = input.nextInt();
+        int factor = 2;
 
-        do {
-            System.out.println("Enter Your Recent Income");
-            String input = scanner.nextLine(); // safer
+        while (number % factor != 0)
+            factor++;
 
-            try {
-                float income = Float.parseFloat(input);
-                var tithe = income * 0.1;
-                var outputAmount = String.format("Kes. %.2f", tithe);
-
-                System.out.println(outputAmount);
-
-                success = true;
-            } catch (NumberFormatException ex) {
-                var errorMsg = String.format("System failure! Invalid input %s! Use a number", input);
-                System.err.println(errorMsg);
-            }
-        } while (!success);
+        System.out.println("The smallest factor other than one is: " + factor);
     }
 
 }
