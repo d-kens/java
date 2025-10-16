@@ -2,16 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter an integer to find its smallest factor other than 1");
-        int number = input.nextInt();
-        int factor = 2;
-
-        while (number % factor != 0)
-            factor++;
-
-        System.out.println("The smallest factor other than one is: " + factor);
+        int n = 10, a = 0, b = 1;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
+        }
     }
-
 }
