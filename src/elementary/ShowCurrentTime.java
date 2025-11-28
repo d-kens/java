@@ -1,4 +1,4 @@
-package ElementaryProgramming;
+package elementary;
 
 public class ShowCurrentTime {
     public static void main(String[] args) {

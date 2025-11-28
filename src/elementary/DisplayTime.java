@@ -1,4 +1,4 @@
-package ElementaryProgramming;
+package elementary;
 
 import java.util.Scanner;
 
