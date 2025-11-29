@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PrintCalendar {
     public static void main(String[] args) {
-        System.out.println(getStartDay(2025, 11));
+        printMonth(2025, 11);
     }
 
     public static void printMonth(int year, int month) {
@@ -12,11 +12,29 @@ public class PrintCalendar {
         printMonthBody(year, month);
     }
 
-    public static void printMonthTitle(int year, int month) {}
+    public static void printMonthTitle(int year, int month) {
+        System.out.println("                   " + getMonthName(month) + " " + year);
+        System.out.println("------------------------------------------");
+        System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
+    }
 
-    public static void printMonthBody(int year, int month) {}
+    public static void printMonthBody(int year, int month) {
+        int startDay = getStartDay(year, month);
+        int numberOfDayInMonth = getNumberOfDaysInMonth(year, month);
 
-    public static String getMothName(int month) {
+        // Pad Space Before The First day of the month
+        for (int i = 0; i < startDay; i++)
+            System.out.print("    ");
+
+        for (int i = 1; i <= numberOfDayInMonth; i++) {
+            System.out.printf("%4d", i);
+
+            if ((i + startDay) % 7 == 0)
+                System.out.println();
+        }
+    }
+
+    public static String getMonthName(int month) {
         return switch (month) {
             case 1 -> "January";
             case 2 -> "February";
@@ -52,10 +70,8 @@ public class PrintCalendar {
                 total += 365;
         }
 
-        for (int i = 1; i < month; i++) {
+        for (int i = 1; i < month; i++)
             total += getNumberOfDaysInMonth(year, i);
-            System.out.println(getNumberOfDaysInMonth(year, i));
-        }
 
 
         return total;
