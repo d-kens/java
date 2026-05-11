@@ -1,57 +1,34 @@
 package oop;
 
-import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String [] args) {
-        Student student = new Student();
-        System.out.println("name: " + student.name);
-        System.out.println("age: " + student.age);
-        System.out.println("is science major: " + student.isScienceMajor);
-        System.out.println("gender: " + student.gender);
+        Scanner input = new Scanner(System.in);
 
-        Date date = new Date();
-        System.out.println("The elapsed time since Jan 1, 1970 is " + date.getTime() + " milliseconds");
-        System.out.println(date.toString());
+        System.out.println("Enter the weight in pounds: ");
+        double weight = input.nextDouble();
 
+        System.out.println("Enter the height in inches: ");
+        double height = input.nextDouble();
 
-        Circle[] circles = createCircleArray();
-        printCircleArray(circles);
+        final double KILOGRAMS_PER_POUND = 0.45359237;
+        final double METERS_PER_INCH = 0.0254;
+
+        double weightInKilograms = weight * KILOGRAMS_PER_POUND;
+        double heightInMeters = height * METERS_PER_INCH;
+
+        double bmi = weightInKilograms / (heightInMeters * heightInMeters);
+
+        System.out.println("BMI is " + bmi);
+        if (bmi < 18.5)
+            System.out.println("Underweight");
+        else if (bmi < 25)
+            System.out.println("Normal");
+        else if (bmi < 30)
+            System.out.println("Overweight");
+        else
+            System.out.println("Obese");
+
     }
-
-
-    // Create an array of Circle Objects
-    public static Circle[] createCircleArray() {
-        Circle[] circles = new Circle[5];
-        for (int i = 0; i < circles.length; i++) {
-            circles[i] = new Circle(Math.random() * 100);
-        }
-        return circles;
-    }
-
-    public static void printCircleArray(Circle[] circles) {
-        System.out.printf("%-30s%-15s\n", "Radius", "Area");
-        for (int i = 0; i < circles.length; i++) {
-            System.out.printf("%-30f%-15f\n", circles[i].getRadius(),
-                    circles[i].getArea());
-        }
-        System.out.println("— — — — — — — — — — — — — — — — — — — — — — — — — — — —");
-        System.out.printf("%-30s%-15f\n", "The total area of circles is", sum(circles));
-    }
-
-    public static double sum(Circle[] circleArray) {
-        // Initialize sum
-        double sum = 0;
-        // Add areas to sum
-        for (int i = 0; i < circleArray.length; i++)
-            sum += circleArray[i].getArea();
-        return sum;
-    }
-}
-
-class Student {
-    String name;
-    int age;
-    boolean isScienceMajor;
-    char gender;
 }
