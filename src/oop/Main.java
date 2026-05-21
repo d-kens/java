@@ -30,5 +30,19 @@ public class Main {
         else
             System.out.println("Obese");
 
+        Course course1 = new Course("Data Structures");
+
+        course1.addStudents("Onyango Dickens");
+        course1.addStudents("Jane Achola");
+        course1.addStudents("Luke Enos");
+
+        System.out.println("The number of students in " +
+                course1.getCourseName() + " is " + course1.getNumberOfStudents());
+
+        String[] course1Students = course1.getStudents();
+        for (String student : course1Students) {
+            System.out.println(student + ", ");
+        }
+
     }
 }
