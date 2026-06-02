@@ -44,5 +44,9 @@ public class Main {
             System.out.println(student + ", ");
         }
 
+        String s1 = "Welcome to Java";
+        String s2 = s1.replace("o", "abc");
+        System.out.println(s1);
+        System.out.println(s2);
     }
 }
