@@ -2,6 +2,8 @@ import com.sun.jdi.IntegerType;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlayGround {
     public static void main(String[] args) {
@@ -83,9 +85,6 @@ public class PlayGround {
         System.out.println(String.valueOf(new char[]{'J', 'a', 'n', 'e'}));
 
         System.out.println(String.valueOf(5.40));
-
-
-
     }
 
     // A factorial of an integer can be very large
