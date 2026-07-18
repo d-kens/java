@@ -10,7 +10,7 @@ public class DynamicBindingDemo {
 
         // Polymorphic calls
         m(new GraduateStudent());
-        m(new Student());
+        m(new Student1());
         m(new Person1());
         m(new Object());
     }
@@ -21,9 +21,9 @@ public class DynamicBindingDemo {
     }
 }
 
-class GraduateStudent extends Student {}
+class GraduateStudent extends Student1 {}
 
-class Student extends Person1 {
+class Student1 extends Person1 {
     @Override
     public String toString() {
         return "Student";
