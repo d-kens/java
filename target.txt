@@ -1,0 +1,1 @@
+Hello world, this is a test file.Hello again, YELLOW YELLOW.Replace this word: YELLOWThe program will replace all occurrences of YELLOW with a new word.

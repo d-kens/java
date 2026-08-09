@@ -1,0 +1,4 @@
+Hello world, this is a test file.
+Hello again, hello hello.
+Replace this word: hello
+The program will replace all occurrences of hello with a new word.
