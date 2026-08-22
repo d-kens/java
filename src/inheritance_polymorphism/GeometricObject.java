@@ -2,7 +2,7 @@ package inheritance_polymorphism;
 
 import java.util.Date;
 
-public class GeometricObject {
+public class GeometricObject extends Object {
     private String color = "white";
     private boolean filled;
     private Date dateCreated;
