@@ -34,4 +34,8 @@ void main() {
         System.out.println();
     }
 
+    Integer n1 = 3;
+    Integer n2 = 4;
+    System.out.println(n1.compareTo(n2));
+
 }
