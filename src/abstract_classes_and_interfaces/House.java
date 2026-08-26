@@ -29,7 +29,10 @@ public class House implements Cloneable, Comparable<House> {
     @Override
     public Object clone() {
         try {
-            return super.clone();
+            House clone = (House) super.clone(); // perform a shallow copy
+            clone.whenBuilt = (Date)(whenBuilt.clone()); // Deep copy on when built
+
+            return clone;
         } catch (CloneNotSupportedException exception) {
             return null;
         }
@@ -43,6 +46,5 @@ public class House implements Cloneable, Comparable<House> {
             return -1;
         else return 0;
     }
-
 
 }
