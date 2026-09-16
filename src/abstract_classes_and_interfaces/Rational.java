@@ -74,26 +74,30 @@ public class Rational extends Number implements Comparable<Rational> {
 
     @Override
     public int intValue() {
-        return 0;
+        return (int) doubleValue();
     }
 
     @Override
     public long longValue() {
-        return 0;
+        return (long) doubleValue();
     }
 
     @Override
     public float floatValue() {
-        return 0;
+        return (float) doubleValue();
     }
 
     @Override
     public double doubleValue() {
-        return 0;
+        return numerator * 1.0 / denominator;
     }
 
     @Override
     public int compareTo(Rational o) {
-        return 0;
+        if (this.subtract(o).getNumerator() > 0)
+            return 1;
+        else if (this.subtract(o).getNumerator() < 0)
+            return -1;
+        else return 0;
     }
 }
