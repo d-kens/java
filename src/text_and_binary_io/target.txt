@@ -1,0 +1,4 @@
+YELLOW is a popular programming language.
+Learning YELLOW takes practice and patience.
+YELLOW programs run on the YELLOW Virtual Machine.
+Many developers enjoy writing YELLOW code every day.
