@@ -1,0 +1,4 @@
+Java is a popular programming language.
+Learning Java takes practice and patience.
+Java programs run on the Java Virtual Machine.
+Many developers enjoy writing Java code every day.
