@@ -8,6 +8,8 @@ public class RecursionPlayground {
 
 
         System.out.println(sumToNRecursive(5));
+
+        nPrintln("Fuck Off", 20);
     }
 
 
@@ -38,6 +40,14 @@ public class RecursionPlayground {
         } else {
             return n + sumToNRecursive(n - 1);
         }
+    }
+
+    // Printing a message n times
+    public static void nPrintln(String message, int times) {
+        if (times >= 1) {
+            System.out.println(message);
+            nPrintln(message,times - 1);
+        } // The base case is times == 0
     }
 
 }
