@@ -1,6 +1,6 @@
 package recursion;
 
-public class RecursiveSelectionSort {
+public class SelectionSort {
 
     static void main() {
 
