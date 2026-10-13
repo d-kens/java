@@ -16,20 +16,20 @@ public class DirectorySize {
 
 
     /**
-     * size(d) = size(f1) + size(f2) + ..... + size(fm) + size(d1) + size(d2) + ...... + size(dn)
+     * size(d) = size(f1) + size(f2) + ... + size(fm) + size(d1) + size(d2) + ... + size(dn)
      */
 
     public static long getSize(File file) {
         long size = 0;
 
-        if (file.isDirectory()) {
+        if (file.isDirectory()) { // if the file object represents a directory, each subitem (file or subdirectory) is recursively invoked to get its size
             File[] files = file.listFiles(); // All files and subdirectories
 
             for (int i = 0; file != null && i < files.length; i++) {
                 size += getSize(files[i]); // recursive call
             }
 
-        } else { // base case
+        } else { // base case - if the file object represents a file, its size is obtained and added to the total size
             size += file.length();
         }
 

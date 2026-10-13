@@ -11,3 +11,10 @@
   3. Every recursive call reduces the original problem, bringing it increasingly closer to the base case until it becomes that case.
 
 - In general, problem-solving using recursion involves breaking down a problem into subproblems. Each subproblem is similar to the original problem, but it is smaller. You can apply the same approach to each subproblem to solve it recursively.
+- Recursive programs can run out of memory causing StackOverflowError.
+
+## Recursion vs. Iteration
+
+## Tip: Performance Concern
+- If you are concerned about your program's performance, avoid using recursion because it takes more time and consumes more memory than iteration.
+- In general, recursion can be used to solve inherent recursive problems like Tower of Hanoi, Recursive Directories, and Sierpinski triangles.
