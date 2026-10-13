@@ -24,7 +24,7 @@ public class BinarySearch {
         return recursiveBinarySearch(input, 0, input.length - 1, target);
     }
 
-    // Recursive helper method - the original method needs to be modified with additional params inn order to be invoked recursively.
+    // Recursive helper method - the original method needs to be modified with additional params in order to be invoked recursively.
     public static int recursiveBinarySearch(int[] input, int low, int high, int target) {
         if (low > high) // Base case: Target not present
             return -1;
