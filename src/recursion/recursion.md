@@ -151,3 +151,6 @@ int factorial(int n) {
 | Best for | Naturally recursive problems (trees, directories, Hanoi) | Simple repetition (counting, summing) |
 
 > **Rule of thumb:** start with whichever version is easier to read. Switch to iteration if the input can be large enough to make the recursion deep, or if performance matters.
+
+
+
