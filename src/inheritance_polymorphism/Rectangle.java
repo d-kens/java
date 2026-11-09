@@ -1,6 +1,8 @@
 package inheritance_polymorphism;
 
-public class Rectangle extends GeometricObject {
+import abstract_classes_and_interfaces.GeometricClass;
+
+public class Rectangle extends GeometricClass {
     private double width;
     private double height;
 

@@ -1,6 +1,8 @@
 package inheritance_polymorphism;
 
-public class Circle extends GeometricObject {
+import abstract_classes_and_interfaces.GeometricClass;
+
+public class Circle extends GeometricClass {
     private double radius;
 
     public Circle() {}
