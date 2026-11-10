@@ -38,7 +38,7 @@ public class OldLibrary {
 
 
         rawComparableMax("Welcome", 23); // Compiles but throws ClassCastException at runtime
-        genericComparableMax("Welcome", 23); // Compile error. String and Integer are not the same T
+        // genericComparableMax("Welcome", 23); // Compile error. String and Integer are not the same T
 
     }
 
