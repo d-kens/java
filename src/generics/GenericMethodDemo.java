@@ -9,7 +9,7 @@ void main() {
 
 
 /***
- * TO define a generic method, you place the generic type <E> immediately after the keyword static in the method header
+ * To define a generic method, you place the generic type <E> immediately after the keyword static in the method header
  * @param list
  * @param <E>
  */

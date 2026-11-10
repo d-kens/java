@@ -7,12 +7,16 @@ import java.util.Date;
 public class Main {
     static void main(String[] args) {
 
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Dickens");
 
-        ArrayList dates = new ArrayList(); // raw type, no type parameter is given. Without type parameter, the compiler treats it as a list holding Object.
+        ArrayList<String> names = new ArrayList<>(); // Parameterized type
+        ArrayList dates  = new ArrayList(); // Raw type - A generic class used without specifying the type parameter. The compiler treats it as a list holding object.
+
+
         dates.add(new Date());
-        // Date date = dates.get(0);
+        dates.add("not a date");
+
+        // Date date = dates.get(0); // compiler error, get returns an Object on raw types so a cast is needed
+        Date date = (Date) dates.get(0);
     }
 
 }
